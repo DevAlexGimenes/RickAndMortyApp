@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_flow"
+    app:startDestination="@id/menuNavigationSelectFragment">
+
+    <fragment
+        android:id="@+id/randomCharacterFragment"
+        android:name="com.alex.rick.and.morty.app.presentation.random.RandomCharacterFragment"
+        android:label="RandomCharacterFragment"
+        tools:layout="@layout/random_character_fragment">
+        <action
+            android:id="@+id/action_randomCharacterFragment_to_detailsCharacterFragment"
+            app:destination="@id/detailsCharacterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/typeNumberCharacterFragment"
+        android:name="com.alex.rick.and.morty.app.presentation.type.TypeNumberCharacterFragment"
+        android:label="TypeNumberCharacterFragment"
+        tools:layout="@layout/type_number_character_fragment">
+        <action
+            android:id="@+id/action_typeNumberCharacterFragment_to_detailsCharacterFragment"
+            app:destination="@id/detailsCharacterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuListOfTheCharacterFragment"
+        android:name="com.alex.rick.and.morty.app.presentation.list.MenuListOfTheCharacterFragment"
+        android:label="MenuListOfTheCharacterFragment"
+        tools:layout="@layout/menu_list_of_the_character_fragment"/>
+    <fragment
+        android:id="@+id/detailsCharacterFragment"
+        android:name="com.alex.rick.and.morty.app.DetailsCharacterFragment"
+        android:label="fragment_details_character"
+        tools:layout="@layout/fragment_details_character" />
+    <fragment
+        android:id="@+id/menuNavigationSelectFragment"
+        android:name="com.alex.rick.and.morty.app.MenuNavigationSelectFragment"
+        android:label="fragment_menu_navigation_select"
+        tools:layout="@layout/fragment_menu_navigation_select" >
+        <action
+            android:id="@+id/action_menuNavigationSelectFragment_to_randomCharacterFragment"
+            app:destination="@id/randomCharacterFragment" />
+        <action
+            android:id="@+id/action_menuNavigationSelectFragment_to_typeNumberCharacterFragment"
+            app:destination="@id/typeNumberCharacterFragment" />
+        <action
+            android:id="@+id/action_menuNavigationSelectFragment_to_menuListOfTheCharacterFragment"
+            app:destination="@id/menuListOfTheCharacterFragment" />
+    </fragment>
+</navigation>

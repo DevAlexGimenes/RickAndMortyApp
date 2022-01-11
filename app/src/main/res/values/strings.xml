@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">RickAndMortyInfo</string>
+    <string name="title_random_character">CLICK TO</string>
+    <string name="sub_title_random_character">Random Character</string>
+    <string name="voice_over_info_icon">Additional Information</string>
+    <string name="txt_info_description">Case you don’t like the number, click again to randon other number</string>
+    <string name="txt_continue">Continue</string>
+    <string name="navigation_bar_random_character">Random Character</string>
+    <string name="navigation_bar_type_number">Type number character</string>
+    <string name="navigation_bar_menu_list">Menu list of the characters</string>
+    <string name="title_type_number">tYPE A NUMBER</string>
+    <string name="hint_type_number">Between 1 and 826</string>
+    <string name="txt_error_type_number">the number is not valid</string>
+    <string name="sub_title_type_number">BETWEEN 1 and 826</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
