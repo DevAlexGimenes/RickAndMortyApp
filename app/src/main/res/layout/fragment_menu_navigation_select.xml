@@ -36,7 +36,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/btnRandomCharacter"
+                android:id="@+id/imgRandomCharacter"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="20dp"
@@ -46,7 +46,7 @@
                 android:textColor="@color/black" />
 
             <Button
-                android:id="@+id/bt_home"
+                android:id="@+id/btnRandomCharacter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
@@ -69,7 +69,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/btnTypeNumberCharacter"
+                android:id="@+id/imgTypeNumber"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="20dp"
@@ -79,7 +79,7 @@
                 android:textColor="@color/black" />
 
             <Button
-                android:id="@+id/bt_he"
+                android:id="@+id/btnTypeNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
@@ -101,7 +101,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/btnMenuListOfTheCharacter"
+                android:id="@+id/imgMenuListCharacters"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="20dp"
@@ -111,7 +111,7 @@
                 android:textColor="@color/black" />
 
             <Button
-                android:id="@+id/bte"
+                android:id="@+id/btnMenuListCharacters"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
