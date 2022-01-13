@@ -5,17 +5,17 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/blue_97E0E0"
-    tools:context=".DetailsCharacterFragment">
+    tools:context=".presentation.details.DetailsCharacterFragment">
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/btnGifRandomCharacter"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/rick_and_morty_menu"
+    <TextView
+        android:id="@+id/txtTeste"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
