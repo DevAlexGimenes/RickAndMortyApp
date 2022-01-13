@@ -1,18 +1,29 @@
 package com.alex.rick.and.morty.app
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.fragment_menu_navigation_select.*
 
-class MenuNavigationSelectFragment : Fragment() {
+class MenuNavigationSelectFragment : Fragment(R.layout.fragment_menu_navigation_select) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_menu_navigation_select, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setNavigation()
     }
 
+    private fun setNavigation() {
+        btnRandomCharacter.setOnClickListener {
+            findNavController().navigate(R.id.action_menuNavigationSelectFragment_to_randomCharacterFragment)
+        }
+
+        btnTypeNumber.setOnClickListener {
+            findNavController().navigate(R.id.action_menuNavigationSelectFragment_to_typeNumberCharacterFragment)
+        }
+
+        btnMenuListCharacters.setOnClickListener {
+            findNavController().navigate(R.id.action_menuNavigationSelectFragment_to_menuListOfTheCharacterFragment)
+        }
+    }
 }
