@@ -42,7 +42,7 @@
                 android:layout_margin="20dp"
                 android:layout_gravity="bottom"
                 android:contentDescription="@string/navigation_bar_random_character"
-                android:src="@drawable/icon_random"
+                android:src="@drawable/random_character_icon"
                 android:textColor="@color/black" />
 
             <Button
@@ -54,7 +54,7 @@
                 android:layout_gravity="top"
                 android:fontFamily="@font/ruslan_display"
                 android:padding="15dp"
-                android:text="@string/txt_continue"
+                android:text="@string/txt_btn_navigate_random_character"
                 android:textAllCaps="false"
                 android:textSize="20sp"
                 app:cornerRadius="20dp" />
@@ -75,7 +75,7 @@
                 android:layout_margin="20dp"
                 android:layout_gravity="bottom"
                 android:contentDescription="@string/navigation_bar_random_character"
-                android:src="@drawable/icon_random"
+                android:src="@drawable/type_number_icon"
                 android:textColor="@color/black" />
 
             <Button
@@ -87,7 +87,7 @@
                 android:layout_gravity="top"
                 android:fontFamily="@font/ruslan_display"
                 android:padding="15dp"
-                android:text="@string/txt_continue"
+                android:text="@string/txt_btn_navigate_type_number"
                 android:textAllCaps="false"
                 android:textSize="20sp"
                 app:cornerRadius="20dp" />
@@ -107,7 +107,7 @@
                 android:layout_margin="20dp"
                 android:layout_gravity="bottom"
                 android:contentDescription="@string/navigation_bar_random_character"
-                android:src="@drawable/icon_random"
+                android:src="@drawable/menu_list_icon"
                 android:textColor="@color/black" />
 
             <Button
@@ -119,7 +119,7 @@
                 android:layout_gravity="top"
                 android:fontFamily="@font/ruslan_display"
                 android:padding="15dp"
-                android:text="@string/txt_continue"
+                android:text="@string/txt_btn_navigate_menu_list_of_the_character"
                 android:textAllCaps="false"
                 android:textSize="20sp"
                 app:cornerRadius="20dp" />
