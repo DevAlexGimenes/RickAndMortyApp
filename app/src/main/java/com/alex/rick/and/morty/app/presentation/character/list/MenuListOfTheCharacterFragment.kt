@@ -1,4 +1,4 @@
-package com.alex.rick.and.morty.app.presentation.list
+package com.alex.rick.and.morty.app.presentation.character.list
 
 import android.os.Bundle
 import android.view.LayoutInflater

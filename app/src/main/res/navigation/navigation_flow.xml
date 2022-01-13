@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/randomCharacterFragment"
-        android:name="com.alex.rick.and.morty.app.presentation.random.RandomCharacterFragment"
+        android:name="com.alex.rick.and.morty.app.presentation.character.random.RandomCharacterFragment"
         android:label="RandomCharacterFragment"
         tools:layout="@layout/random_character_fragment">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/typeNumberCharacterFragment"
-        android:name="com.alex.rick.and.morty.app.presentation.type.TypeNumberCharacterFragment"
+        android:name="com.alex.rick.and.morty.app.presentation.character.type.TypeNumberCharacterFragment"
         android:label="TypeNumberCharacterFragment"
         tools:layout="@layout/type_number_character_fragment">
         <action
@@ -25,14 +25,19 @@
     </fragment>
     <fragment
         android:id="@+id/menuListOfTheCharacterFragment"
-        android:name="com.alex.rick.and.morty.app.presentation.list.MenuListOfTheCharacterFragment"
+        android:name="com.alex.rick.and.morty.app.presentation.character.list.MenuListOfTheCharacterFragment"
         android:label="MenuListOfTheCharacterFragment"
         tools:layout="@layout/menu_list_of_the_character_fragment"/>
     <fragment
         android:id="@+id/detailsCharacterFragment"
-        android:name="com.alex.rick.and.morty.app.DetailsCharacterFragment"
+        android:name="com.alex.rick.and.morty.app.presentation.details.DetailsCharacterFragment"
         android:label="fragment_details_character"
-        tools:layout="@layout/fragment_details_character" />
+        tools:layout="@layout/fragment_details_character" >
+        <argument
+            android:name="id"
+            app:argType="string"
+            android:defaultValue='""' />
+    </fragment>
     <fragment
         android:id="@+id/menuNavigationSelectFragment"
         android:name="com.alex.rick.and.morty.app.MenuNavigationSelectFragment"
