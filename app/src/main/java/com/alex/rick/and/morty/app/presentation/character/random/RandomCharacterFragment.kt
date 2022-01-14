@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.alex.rick.and.morty.app.databinding.RandomCharacterFragmentBinding
-import com.alex.rick.and.morty.app.presentation.details.DetailsCharacterViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RandomCharacterFragment : Fragment() {
 

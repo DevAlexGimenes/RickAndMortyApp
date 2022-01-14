@@ -14,10 +14,13 @@ class DetailsCharacterViewModel(
 ) : ViewModel() {
 
     private val notifyErrorLv = MutableLiveData<Unit>()
-    fun notifyError() : MutableLiveData<Unit> = notifyErrorLv
+    fun notifyError(): MutableLiveData<Unit> = notifyErrorLv
 
-    private val singleCharacterLv = MutableLiveData<SingleCharacter>()
-    fun singleCharacter(): MutableLiveData<SingleCharacter> = singleCharacterLv
+    private val notifySuccessLv = MutableLiveData<Unit>()
+    fun notifySuccess(): MutableLiveData<Unit> = notifySuccessLv
+
+    private val singleCharacterLv = MutableLiveData<SingleCharacter?>()
+    fun singleCharacter(): MutableLiveData<SingleCharacter?> = singleCharacterLv
 
     fun getSingleCharacter(id: String) {
         CoroutineScope(Dispatchers.Main).launch {
@@ -27,10 +30,12 @@ class DetailsCharacterViewModel(
                 }
                 singleCharacterLv.value = moviesInformation
             } catch (e: Exception) {
-                println("ERROR: $e")
                 notifyErrorLv.postValue(Unit)
             }
 
+            if (singleCharacterLv.value != null) {
+                notifySuccessLv.postValue(Unit)
+            }
         }
     }
 }
