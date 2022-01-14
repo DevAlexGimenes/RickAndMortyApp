@@ -2,18 +2,15 @@ package com.alex.rick.and.morty.app.presentation.details
 
 import android.app.AlertDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.lifecycle.Observer
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.alex.rick.and.morty.app.R
 import kotlinx.android.synthetic.main.fragment_details_character.*
-import kotlinx.android.synthetic.main.notify_error_message.view.*
+import kotlinx.android.synthetic.main.notify_error_message.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import kotlin.coroutines.coroutineContext
 
 
 class DetailsCharacterFragment : Fragment() {
@@ -29,38 +26,51 @@ class DetailsCharacterFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_details_character, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onResume() {
+        super.onResume()
         prepareObservers()
     }
 
     private fun prepareObservers() {
+        val view = View.inflate(context, R.layout.notify_loading_message, null)
+        val builder = AlertDialog.Builder(context)
+        builder.setView(view)
+        val dialog = builder.create()
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog.show()
+
         args.let {
             viewModel.getSingleCharacter(it.id)
         }
 
         viewModel
+            .notifySuccess()
+            .observe(viewLifecycleOwner, {
+                dialog.dismiss()
+            })
+
+        viewModel
             .singleCharacter()
-            .observe(viewLifecycleOwner, Observer {
-                txtTeste.text = it.status
+            .observe(viewLifecycleOwner, {
+                txtTeste.text = it?.status
             })
 
         viewModel
             .notifyError()
-            .observe(viewLifecycleOwner, Observer {
-                Toast.makeText(context, "AAAAAAAAAAAAAAAA", Toast.LENGTH_SHORT).show()
-                winDialogAlert()
+            .observe(viewLifecycleOwner, {
+                dialog.dismiss()
+                initNotifyError()
             })
     }
 
-    private fun winDialogAlert() {
+    private fun initNotifyError() {
         val view = View.inflate(context, R.layout.notify_error_message, null)
         val builder = AlertDialog.Builder(context)
         builder.setView(view)
         val dialog = builder.create()
-        dialog.show()
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
-        view.btn_confirm.setOnClickListener {
+        dialog.show()
+        btn_back.setOnClickListener {
             dialog.dismiss()
         }
     }

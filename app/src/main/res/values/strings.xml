@@ -3,7 +3,7 @@
     <string name="title_random_character">CLICK TO</string>
     <string name="sub_title_random_character">Random Character</string>
     <string name="voice_over_info_icon">Additional Information</string>
-    <string name="txt_info_description">Case you don’t like the number, click again to randon other number</string>
+    <string name="txt_info_description">Click on the GIF to generate a random number. Case you don’t like the number, click again to randon other number</string>
     <string name="txt_continue">Continue</string>
     <string name="navigation_bar_random_character">Random Character</string>
     <string name="navigation_bar_type_number">Type number character</string>

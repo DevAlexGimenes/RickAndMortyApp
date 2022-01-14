@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp"
-        android:background="@drawable/shape_border_error"
+        android:background="@drawable/shape_border_loading"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:gravity="center_horizontal"
-            android:text="ERROR"
+            android:text="Please wait"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -33,42 +33,39 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="70dp"
+            android:layout_marginTop="10dp"
             android:gravity="center_horizontal"
-            android:maxLines="3"
-            android:text="Failed to load character information, please go back to the previous screen and try again..."
+            android:text="Loading Character information..."
             android:textAlignment="center"
             android:textColor="@color/black"
+            android:layout_marginBottom="70dp"
             android:textSize="16sp"
             android:textStyle="bold" />
 
     </LinearLayout>
 
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:indeterminateTint="@color/black"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/linear_layout" />
+
     <ImageView
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginBottom="180dp"
-        android:background="@drawable/shape_error_icon"
+        android:background="@drawable/shape_loading_icon"
         android:padding="8dp"
-        android:src="@drawable/ic_error"
+        android:src="@drawable/ic_loading"
         app:layout_constraintBottom_toBottomOf="@+id/linear_layout"
         app:layout_constraintEnd_toEndOf="@+id/linear_layout"
         app:layout_constraintStart_toStartOf="@+id/linear_layout"
         app:layout_constraintTop_toTopOf="@+id/linear_layout" />
 
-    <Button
-        android:id="@+id/btn_back"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:backgroundTint="#E42315"
-        android:text="Back"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/linear_layout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linear_layout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -84,7 +84,7 @@
             <TextView
                 android:id="@+id/txtInfo"
                 android:layout_width="321dp"
-                android:layout_height="44dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/oldenburg"
                 android:gravity="center"
