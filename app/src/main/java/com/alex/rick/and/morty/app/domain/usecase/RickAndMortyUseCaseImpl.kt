@@ -1,7 +1,7 @@
-package com.alex.rick.and.morty.app.domain
+package com.alex.rick.and.morty.app.domain.usecase
 
 import com.alex.rick.and.morty.app.data.character.SingleCharacter
-import kotlinx.coroutines.delay
+import com.alex.rick.and.morty.app.domain.repository.RickAnMortyRepository
 
 class RickAndMortyUseCaseImpl(
     private val rickAnMortyRepository: RickAnMortyRepository
