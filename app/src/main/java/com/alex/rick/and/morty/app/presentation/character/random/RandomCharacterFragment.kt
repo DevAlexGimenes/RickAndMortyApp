@@ -10,8 +10,6 @@ import com.alex.rick.and.morty.app.databinding.RandomCharacterFragmentBinding
 
 class RandomCharacterFragment : Fragment() {
 
-
-
     private var _binding: RandomCharacterFragmentBinding? = null
 
     private val binding get() = _binding!!

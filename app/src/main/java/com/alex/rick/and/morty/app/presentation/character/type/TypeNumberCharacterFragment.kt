@@ -30,11 +30,11 @@ class TypeNumberCharacterFragment : Fragment() {
     private fun prepareContentView() {
         binding.btHome.setOnClickListener {
             if (binding.editTextInput.text.toString().isEmpty()) {
-                binding.txtInfo.visibility = View.VISIBLE
-                binding.iconImg.visibility = View.VISIBLE
+                binding.txtError.visibility = View.VISIBLE
+                binding.iconError.visibility = View.VISIBLE
             } else {
-                binding.txtInfo.visibility = View.GONE
-                binding.iconImg.visibility = View.GONE
+                binding.txtError.visibility = View.GONE
+                binding.iconError.visibility = View.GONE
             }
         }
     }

@@ -1,7 +1,7 @@
 package com.alex.rick.and.morty.app.data.character
 
 import com.alex.rick.and.morty.app.data.api.RickAndMortyRemoteSource
-import com.alex.rick.and.morty.app.domain.RickAnMortyRepository
+import com.alex.rick.and.morty.app.domain.repository.RickAnMortyRepository
 import kotlinx.coroutines.delay
 
 class RickAnMortyRepositoryImpl(
@@ -9,7 +9,7 @@ class RickAnMortyRepositoryImpl(
 ) : RickAnMortyRepository {
 
     override suspend fun getSingleCharacter(id: String): SingleCharacter {
-        delay(5000)
+        delay(2000)
         return rickAndMortyRemoteSource.getSingleCharacter(id)
     }
 }

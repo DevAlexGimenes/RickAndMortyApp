@@ -1,4 +1,4 @@
-package com.alex.rick.and.morty.app.domain
+package com.alex.rick.and.morty.app.domain.repository
 
 import com.alex.rick.and.morty.app.data.character.SingleCharacter
 

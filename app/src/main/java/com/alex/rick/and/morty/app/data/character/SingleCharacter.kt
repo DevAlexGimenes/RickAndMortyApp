@@ -16,4 +16,19 @@ data class SingleCharacter(
     @SerializedName("status")
     val status: String? = "",
 
+    @SerializedName("image")
+    val image: String? = "",
+
+    @SerializedName("species")
+    val species: String? = "",
+
+    @SerializedName("gender")
+    val gender: String? = "",
+
+    @SerializedName("location")
+    val location: CharacterLocation?,
+
+    @SerializedName("origin")
+    val origin: CharacterOrigin?
+
 ) : Parcelable

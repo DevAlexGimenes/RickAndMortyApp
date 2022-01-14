@@ -4,9 +4,9 @@ import com.alex.rick.and.morty.app.BuildConfig
 import com.alex.rick.and.morty.app.data.api.RickAndMortyRemoteSource
 import com.alex.rick.and.morty.app.data.api.ServiceFactory
 import com.alex.rick.and.morty.app.data.character.RickAnMortyRepositoryImpl
-import com.alex.rick.and.morty.app.domain.RickAnMortyRepository
-import com.alex.rick.and.morty.app.domain.RickAndMortyUseCase
-import com.alex.rick.and.morty.app.domain.RickAndMortyUseCaseImpl
+import com.alex.rick.and.morty.app.domain.repository.RickAnMortyRepository
+import com.alex.rick.and.morty.app.domain.usecase.RickAndMortyUseCase
+import com.alex.rick.and.morty.app.domain.usecase.RickAndMortyUseCaseImpl
 import com.alex.rick.and.morty.app.presentation.details.DetailsCharacterViewModel
 import com.google.gson.Gson
 import okhttp3.OkHttpClient
