@@ -10,7 +10,7 @@ import com.alex.rick.and.morty.app.data.character.SingleCharacter
 import com.alex.rick.and.morty.app.presentation.StatusCharacter
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_details_character.*
-import kotlinx.android.synthetic.main.notify_error_message.*
+import kotlinx.android.synthetic.main.notify_error_message.view.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -87,7 +87,7 @@ class DetailsCharacterFragment : Fragment(R.layout.fragment_details_character) {
         val dialog = builder.create()
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
         dialog.show()
-        btn_back.setOnClickListener {
+        view.btnBack.setOnClickListener {
             dialog.dismiss()
         }
     }

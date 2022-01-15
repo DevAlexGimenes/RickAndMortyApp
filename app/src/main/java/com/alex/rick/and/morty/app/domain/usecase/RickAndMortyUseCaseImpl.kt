@@ -9,4 +9,8 @@ class RickAndMortyUseCaseImpl(
     override suspend fun getSingleCharacter(id: String) : SingleCharacter{
         return rickAnMortyRepository.getSingleCharacter(id)
     }
+
+    override suspend fun getListCharacter(page: String): List<SingleCharacter> {
+        return rickAnMortyRepository.getListCharacter(page)
+    }
 }

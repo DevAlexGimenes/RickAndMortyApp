@@ -12,4 +12,9 @@ class RickAnMortyRepositoryImpl(
         delay(2000)
         return rickAndMortyRemoteSource.getSingleCharacter(id)
     }
+
+    override suspend fun getListCharacter(page: String): List<SingleCharacter> {
+        delay(2000)
+        return rickAndMortyRemoteSource.getListCharacter(page = page).character
+    }
 }
