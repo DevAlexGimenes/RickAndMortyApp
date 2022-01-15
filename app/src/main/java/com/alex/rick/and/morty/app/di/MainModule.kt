@@ -7,6 +7,7 @@ import com.alex.rick.and.morty.app.data.character.RickAnMortyRepositoryImpl
 import com.alex.rick.and.morty.app.domain.repository.RickAnMortyRepository
 import com.alex.rick.and.morty.app.domain.usecase.RickAndMortyUseCase
 import com.alex.rick.and.morty.app.domain.usecase.RickAndMortyUseCaseImpl
+import com.alex.rick.and.morty.app.presentation.character.list.navigate.CharacterNavigateListViewModel
 import com.alex.rick.and.morty.app.presentation.character.list.random.RandomCharacterListViewModel
 import com.alex.rick.and.morty.app.presentation.details.DetailsCharacterViewModel
 import com.google.gson.Gson
@@ -22,6 +23,10 @@ const val KOIN_RETROFIT = "retrofit"
 const val KOIN_OKHTTP = "okhttp"
 
 val mainModule = module {
+
+    viewModel {
+        CharacterNavigateListViewModel(get())
+    }
 
     viewModel {
         DetailsCharacterViewModel(get())

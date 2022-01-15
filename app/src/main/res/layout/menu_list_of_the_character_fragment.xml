@@ -116,7 +116,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtInfo" />
 
             <Button
-                android:id="@+id/bt_hom"
+                android:id="@+id/btnjustNavigate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="35dp"

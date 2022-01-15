@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_menuListOfTheCharacterFragment_to_randomCharacterListFragment"
             app:destination="@id/randomCharacterListFragment" />
+        <action
+            android:id="@+id/action_menuListOfTheCharacterFragment_to_characterNavigateListFragment"
+            app:destination="@id/characterNavigateListFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailsCharacterFragment"
@@ -67,6 +70,15 @@
             app:argType="string" />
         <action
             android:id="@+id/action_randomCharacterListFragment_to_detailsCharacterFragment"
+            app:destination="@id/detailsCharacterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterNavigateListFragment"
+        android:name="com.alex.rick.and.morty.app.presentation.character.list.navigate.CharacterNavigateListFragment"
+        android:label="CharacterNavigateListFragment"
+        tools:layout="@layout/fragment_character_navigate_list">
+        <action
+            android:id="@+id/action_characterNavigateListFragment_to_detailsCharacterFragment"
             app:destination="@id/detailsCharacterFragment" />
     </fragment>
 </navigation>
