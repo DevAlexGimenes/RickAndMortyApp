@@ -30,30 +30,45 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
                 android:id="@+id/subTitle"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="30dp"
-                android:hint="@string/hint_type_number"
-                app:boxStrokeColor="@color/black"
-                app:hintTextColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:maxLength="3"
+                android:inputType="number"
+                android:textColorHint="@color/black"
+                android:shadowColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/firstTitle"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/firstTitle">
+                app:layout_constraintEnd_toEndOf="parent"
+                android:importantForAutofill="no" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/oldenburg"
-                    android:inputType="number"
-                    android:maxLength="3"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/subTitle"-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="30dp"-->
+<!--                android:hint="@string/hint_type_number"-->
+<!--                app:boxStrokeColor="@color/black"-->
+<!--                app:hintTextColor="@color/black"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/firstTitle">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/editTextInput"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:fontFamily="@font/oldenburg"-->
+<!--                    android:inputType="number"-->
+<!--                    android:maxLength="3"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="15sp" />-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
             <ImageView
                 android:id="@+id/iconError"
@@ -130,7 +145,7 @@
 
 
             <Button
-                android:id="@+id/bt_home"
+                android:id="@+id/btnContinue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="35dp"

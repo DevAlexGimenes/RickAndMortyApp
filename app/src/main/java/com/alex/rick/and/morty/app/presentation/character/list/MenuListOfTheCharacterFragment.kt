@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.alex.rick.and.morty.app.databinding.MenuListOfTheCharacterFragmentBinding
+import com.alex.rick.and.morty.app.presentation.character.random.RandomCharacterFragmentDirections
 
 class MenuListOfTheCharacterFragment : Fragment() {
 
@@ -29,12 +31,23 @@ class MenuListOfTheCharacterFragment : Fragment() {
 
     private fun prepareContentView() {
         binding.btnRandomNumber.isEnabled = false
+        var randomNumber = 1
 
         binding.btnGifRandomCharacter.setOnClickListener {
-            val randomNumber = (1..826).random()
+            randomNumber = (1..42).random()
             binding.showRandomNumber.text = randomNumber.toString()
             binding.btnRandomNumber.isEnabled = true
         }
+
+        binding.btnRandomNumber.setOnClickListener {
+            val action = MenuListOfTheCharacterFragmentDirections
+                .actionMenuListOfTheCharacterFragmentToRandomCharacterListFragment(
+                    id = randomNumber.toString()
+                )
+            findNavController().navigate(action)
+        }
+
+
     }
 
 }

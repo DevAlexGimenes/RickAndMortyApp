@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.alex.rick.and.morty.app.databinding.TypeNumberCharacterFragmentBinding
 
 class TypeNumberCharacterFragment : Fragment() {
@@ -28,14 +29,26 @@ class TypeNumberCharacterFragment : Fragment() {
     }
 
     private fun prepareContentView() {
-        binding.btHome.setOnClickListener {
-            if (binding.editTextInput.text.toString().isEmpty()) {
+
+        binding.btnContinue.setOnClickListener {
+            val value = binding.subTitle.text.toString()
+
+            if (value.isEmpty() || value.toInt() < 1 || value.toInt() > 826) {
                 binding.txtError.visibility = View.VISIBLE
                 binding.iconError.visibility = View.VISIBLE
             } else {
                 binding.txtError.visibility = View.GONE
                 binding.iconError.visibility = View.GONE
+
+                val action =
+                    TypeNumberCharacterFragmentDirections
+                        .actionTypeNumberCharacterFragmentToDetailsCharacterFragment(
+                        id = binding.subTitle.text.toString()
+                    )
+                findNavController().navigate(action)
             }
         }
     }
 }
+
+

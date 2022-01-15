@@ -27,7 +27,11 @@
         android:id="@+id/menuListOfTheCharacterFragment"
         android:name="com.alex.rick.and.morty.app.presentation.character.list.MenuListOfTheCharacterFragment"
         android:label="MenuListOfTheCharacterFragment"
-        tools:layout="@layout/menu_list_of_the_character_fragment"/>
+        tools:layout="@layout/menu_list_of_the_character_fragment">
+        <action
+            android:id="@+id/action_menuListOfTheCharacterFragment_to_randomCharacterListFragment"
+            app:destination="@id/randomCharacterListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailsCharacterFragment"
         android:name="com.alex.rick.and.morty.app.presentation.details.DetailsCharacterFragment"
@@ -52,5 +56,17 @@
         <action
             android:id="@+id/action_menuNavigationSelectFragment_to_menuListOfTheCharacterFragment"
             app:destination="@id/menuListOfTheCharacterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/randomCharacterListFragment"
+        android:name="com.alex.rick.and.morty.app.presentation.character.list.random.RandomCharacterListFragment"
+        android:label="fragment_random_character_list"
+        tools:layout="@layout/fragment_random_character_list" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_randomCharacterListFragment_to_detailsCharacterFragment"
+            app:destination="@id/detailsCharacterFragment" />
     </fragment>
 </navigation>
