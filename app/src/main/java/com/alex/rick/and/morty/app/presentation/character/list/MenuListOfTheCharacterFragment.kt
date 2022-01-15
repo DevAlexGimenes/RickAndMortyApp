@@ -47,7 +47,10 @@ class MenuListOfTheCharacterFragment : Fragment() {
             findNavController().navigate(action)
         }
 
-
+        binding.btnjustNavigate.setOnClickListener {
+            val action = MenuListOfTheCharacterFragmentDirections
+                .actionMenuListOfTheCharacterFragmentToCharacterNavigateListFragment()
+            findNavController().navigate(action)
+        }
     }
-
 }

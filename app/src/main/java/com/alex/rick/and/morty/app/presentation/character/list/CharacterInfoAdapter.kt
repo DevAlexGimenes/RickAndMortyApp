@@ -43,6 +43,6 @@ class CharacterInfoAdapter(
     }
 
     interface OnItemClickListener {
-        fun onItemClicked(movie: SingleCharacter)
+        fun onItemClicked(character: SingleCharacter)
     }
 }
