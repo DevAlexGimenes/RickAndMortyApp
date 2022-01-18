@@ -14,14 +14,21 @@ class RandomCharacterListViewModel(
 ) : ViewModel() {
 
     private val charactersInfoLv = MutableLiveData<List<SingleCharacter>>()
-    fun charactersInfoLv() : MutableLiveData<List<SingleCharacter>> = charactersInfoLv
+    fun charactersInfoLv(): MutableLiveData<List<SingleCharacter>> = charactersInfoLv
+
+    private val notifyErrorLv = MutableLiveData<Unit>()
+    fun notifyError(): MutableLiveData<Unit> = notifyErrorLv
 
     fun getListCharacter(id: String) {
         CoroutineScope(Dispatchers.Main).launch {
-            val moviesInformation = withContext(Dispatchers.Default) {
-                rickAndMortyUseCase.getListCharacter(id)
+            try {
+                val moviesInformation = withContext(Dispatchers.Default) {
+                    rickAndMortyUseCase.getListCharacter(id)
+                }
+                charactersInfoLv.value = moviesInformation
+            } catch (e: Exception) {
+                notifyErrorLv.postValue(Unit)
             }
-            charactersInfoLv.value = moviesInformation
         }
     }
 }

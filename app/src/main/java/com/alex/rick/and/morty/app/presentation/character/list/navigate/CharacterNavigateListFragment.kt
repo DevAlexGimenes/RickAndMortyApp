@@ -10,6 +10,7 @@ import com.alex.rick.and.morty.app.R
 import com.alex.rick.and.morty.app.data.character.SingleCharacter
 import com.alex.rick.and.morty.app.presentation.character.list.CharacterInfoAdapter
 import kotlinx.android.synthetic.main.fragment_character_navigate_list.*
+import kotlinx.android.synthetic.main.notify_error_message.view.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CharacterNavigateListFragment : Fragment(R.layout.fragment_character_navigate_list),
@@ -25,11 +26,6 @@ class CharacterNavigateListFragment : Fragment(R.layout.fragment_character_navig
     }
 
     private fun prepareContent() {
-        viewModel.setButtons().observe(viewLifecycleOwner, {
-            btnNextArrow.isEnabled = it.second
-            btnBackArrow.isEnabled = it.first
-        })
-
         val view = View.inflate(context, R.layout.notify_loading_message, null)
         val builder = AlertDialog.Builder(context)
         builder.setView(view)
@@ -39,6 +35,18 @@ class CharacterNavigateListFragment : Fragment(R.layout.fragment_character_navig
         dialog.setCanceledOnTouchOutside(false)
 
         val characterAdapter = CharacterInfoAdapter(emptyList(), this)
+
+        viewModel.setButtons().observe(viewLifecycleOwner, {
+            btnNextArrow.isEnabled = it.second
+            btnBackArrow.isEnabled = it.first
+        })
+
+        viewModel
+            .notifyError()
+            .observe(viewLifecycleOwner, {
+                dialog.dismiss()
+                initNotifyError()
+            })
 
         btnBackArrow.setOnClickListener {
             onClickBackPage(characterAdapter)
@@ -62,6 +70,19 @@ class CharacterNavigateListFragment : Fragment(R.layout.fragment_character_navig
             characterAdapter.updateList(character)
             dialog.dismiss()
         })
+    }
+
+    private fun initNotifyError() {
+        val view = View.inflate(context, R.layout.notify_error_message, null)
+        val builder = AlertDialog.Builder(context)
+        builder.setView(view)
+        val dialog = builder.create()
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog.show()
+        view.btnBack.setOnClickListener {
+            dialog.dismiss()
+            findNavController().navigateUp()
+        }
     }
 
     private fun onClickNextPage(characterInfoAdapter: CharacterInfoAdapter) {

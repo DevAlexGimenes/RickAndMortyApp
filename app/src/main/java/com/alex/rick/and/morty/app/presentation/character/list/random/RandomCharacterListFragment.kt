@@ -12,6 +12,7 @@ import com.alex.rick.and.morty.app.R
 import com.alex.rick.and.morty.app.data.character.SingleCharacter
 import com.alex.rick.and.morty.app.presentation.character.list.CharacterInfoAdapter
 import kotlinx.android.synthetic.main.fragment_random_character_list.*
+import kotlinx.android.synthetic.main.notify_error_message.view.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RandomCharacterListFragment : Fragment(R.layout.fragment_random_character_list),
@@ -41,6 +42,13 @@ class RandomCharacterListFragment : Fragment(R.layout.fragment_random_character_
         RvItemListRandom.setHasFixedSize(true)
         RvItemListRandom.adapter = characterAdapter
 
+        viewModel
+            .notifyError()
+            .observe(viewLifecycleOwner, {
+                dialog.dismiss()
+                initNotifyError()
+            })
+
         args.let { args ->
             showRandomNumberList.text = args.id
             viewModel.getListCharacter(args.id)
@@ -49,7 +57,19 @@ class RandomCharacterListFragment : Fragment(R.layout.fragment_random_character_
                 dialog.dismiss()
             })
         }
+    }
 
+    private fun initNotifyError() {
+        val view = View.inflate(context, R.layout.notify_error_message, null)
+        val builder = AlertDialog.Builder(context)
+        builder.setView(view)
+        val dialog = builder.create()
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog.show()
+        view.btnBack.setOnClickListener {
+            dialog.dismiss()
+            findNavController().navigateUp()
+        }
     }
 
     override fun onItemClicked(character: SingleCharacter) {
