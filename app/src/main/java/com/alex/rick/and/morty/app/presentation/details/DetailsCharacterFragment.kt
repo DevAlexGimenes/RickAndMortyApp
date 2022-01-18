@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.alex.rick.and.morty.app.R
 import com.alex.rick.and.morty.app.data.character.SingleCharacter
@@ -89,6 +91,7 @@ class DetailsCharacterFragment : Fragment(R.layout.fragment_details_character) {
         dialog.show()
         view.btnBack.setOnClickListener {
             dialog.dismiss()
+            findNavController().navigateUp()
         }
     }
 }

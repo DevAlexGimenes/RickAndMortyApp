@@ -12,12 +12,15 @@ import kotlinx.coroutines.withContext
 class CharacterNavigateListViewModel(
     private val rickAndMortyUseCase: RickAndMortyUseCase
 ) : ViewModel() {
-    
-    private val charactersInfoLv = MutableLiveData<List<SingleCharacter>>()
-    fun charactersInfo() : MutableLiveData<List<SingleCharacter>> = charactersInfoLv
 
-    private val setButtonsLv = MutableLiveData<Pair<Boolean,Boolean>>()
-    fun setButtons() : MutableLiveData<Pair<Boolean,Boolean>> = setButtonsLv
+    private val charactersInfoLv = MutableLiveData<List<SingleCharacter>>()
+    fun charactersInfo(): MutableLiveData<List<SingleCharacter>> = charactersInfoLv
+
+    private val setButtonsLv = MutableLiveData<Pair<Boolean, Boolean>>()
+    fun setButtons(): MutableLiveData<Pair<Boolean, Boolean>> = setButtonsLv
+
+    private val notifyErrorLv = MutableLiveData<Unit>()
+    fun notifyError(): MutableLiveData<Unit> = notifyErrorLv
 
     fun getListCharacter(page: Int) {
         CoroutineScope(Dispatchers.Main).launch {
@@ -28,7 +31,7 @@ class CharacterNavigateListViewModel(
                 charactersInfoLv.value = moviesInformation
                 setButtonsController(page)
             } catch (e: Exception) {
-
+                notifyErrorLv.postValue(Unit)
             }
 
         }
