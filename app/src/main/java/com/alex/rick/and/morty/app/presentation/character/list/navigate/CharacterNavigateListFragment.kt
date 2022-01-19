@@ -3,7 +3,6 @@ package com.alex.rick.and.morty.app.presentation.character.list.navigate
 import android.app.AlertDialog
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alex.rick.and.morty.app.R
@@ -65,7 +64,7 @@ class CharacterNavigateListFragment : Fragment(R.layout.fragment_character_navig
         showRandomNumberList.text = pageNumber.toString()
 
         viewModel.getListCharacter(pageNumber)
-        viewModel.charactersInfo().observe(viewLifecycleOwner, Observer { character ->
+        viewModel.charactersInfo().observe(viewLifecycleOwner, { character ->
             RvItemListRandom.scrollToPosition(0)
             characterAdapter.updateList(character)
             dialog.dismiss()
@@ -89,7 +88,7 @@ class CharacterNavigateListFragment : Fragment(R.layout.fragment_character_navig
         pageNumber++
         showRandomNumberList.text = pageNumber.toString()
         viewModel.getListCharacter(pageNumber)
-        viewModel.charactersInfo().observe(viewLifecycleOwner, Observer { character ->
+        viewModel.charactersInfo().observe(viewLifecycleOwner, { character ->
             characterInfoAdapter.updateList(character)
         })
     }
@@ -98,7 +97,7 @@ class CharacterNavigateListFragment : Fragment(R.layout.fragment_character_navig
         pageNumber--
         showRandomNumberList.text = pageNumber.toString()
         viewModel.getListCharacter(pageNumber)
-        viewModel.charactersInfo().observe(viewLifecycleOwner, Observer { character ->
+        viewModel.charactersInfo().observe(viewLifecycleOwner, { character ->
             characterInfoAdapter.updateList(character)
         })
     }

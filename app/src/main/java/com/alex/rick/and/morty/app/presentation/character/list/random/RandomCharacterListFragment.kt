@@ -4,7 +4,6 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -52,7 +51,7 @@ class RandomCharacterListFragment : Fragment(R.layout.fragment_random_character_
         args.let { args ->
             showRandomNumberList.text = args.id
             viewModel.getListCharacter(args.id)
-            viewModel.charactersInfoLv().observe(viewLifecycleOwner, Observer { character ->
+            viewModel.charactersInfoLv().observe(viewLifecycleOwner, { character ->
                 characterAdapter.updateList(character)
                 dialog.dismiss()
             })
@@ -78,7 +77,5 @@ class RandomCharacterListFragment : Fragment(R.layout.fragment_random_character_
                 id = character.id.toString()
             )
         findNavController().navigate(action)
-
     }
-
 }

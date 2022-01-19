@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/shape_border_item_list"
-    android:layout_margin="15dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    android:background="@drawable/shape_border_item_list">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/image_character"
@@ -23,8 +23,8 @@
         android:id="@+id/txtNameList"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/ruslan_display"
         android:layout_marginStart="15dp"
+        android:fontFamily="@font/ruslan_display"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

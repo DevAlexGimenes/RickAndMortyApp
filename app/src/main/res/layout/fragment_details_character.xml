@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/ruslan_display"
-            android:text="Name"
+            android:text="@string/load_info_txt_name"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="30sp"
@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
                     android:fontFamily="@font/oldenburg"
-                    android:text="Status:"
+                    android:text="@string/txt_status"
                     android:textColor="#6A6A6A"
                     android:textSize="20sp" />
 
@@ -82,10 +82,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:contentDescription="@string/txt_empty"
                     tools:src="@drawable/alive_status" />
-
             </LinearLayout>
-
 
             <LinearLayout
                 android:id="@+id/llSpecie"
@@ -100,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
                     android:fontFamily="@font/oldenburg"
-                    android:text="Specie:"
+                    android:text="@string/txt_specie"
                     android:textColor="#6A6A6A"
                     android:textSize="20sp" />
 
@@ -128,7 +127,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
                     android:fontFamily="@font/oldenburg"
-                    android:text="Gender:"
+                    android:text="@string/txt_gender"
                     android:textColor="#6A6A6A"
                     android:textSize="20sp" />
 
@@ -147,7 +146,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_margin="15dp"
-                android:background="#5C5C5C"/>
+                android:background="#5C5C5C" />
 
             <LinearLayout
                 android:id="@+id/llFirstSeeIn"
@@ -162,10 +161,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
                     android:fontFamily="@font/oldenburg"
-                    android:text="First see in:"
+                    android:text="@string/txt_first_see_in"
                     android:textColor="#6A6A6A"
                     android:textSize="20sp" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -201,10 +199,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
                     android:fontFamily="@font/oldenburg"
-                    android:text="Last known Location:"
+                    android:text="@string/txt_last_known_location"
                     android:textColor="#6A6A6A"
                     android:textSize="20sp" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -218,8 +215,8 @@
                     android:id="@+id/txtInfoLastKnownLocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:layout_margin="15dp"
+                    android:layout_marginBottom="10dp"
                     android:fontFamily="@font/oldenburg"
                     android:gravity="center"
                     android:maxLines="5"

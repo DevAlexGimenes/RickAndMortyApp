@@ -25,4 +25,25 @@
     <string name="txt_status_alive">Alive</string>
     <string name="txt_status_dead">Dead</string>
     <string name="txt_status_unknown">Unknown</string>
+    <string name="back_button">Back button</string>
+    <string name="next_button">Next Button</string>
+    <string name="load_info_txt_name">Name</string>
+    <string name="txt_status">Status:</string>
+    <string name="txt_empty" />
+    <string name="txt_specie">Specie:</string>
+    <string name="txt_gender">Gender:</string>
+    <string name="txt_first_see_in">First see in:</string>
+    <string name="txt_last_known_location">Last known Location:</string>
+    <string name="txt_title_go_to">GO TO</string>
+    <string name="txt_random_number">Random number</string>
+    <string name="txt_character_list">CHARACTER LIST</string>
+    <string name="txt_just_navigate">Just Navigate</string>
+    <string name="txt_title_error">ERROR</string>
+    <string name="txt_desc_error">Failed to load character information, please go back to the previous screen and try again…</string>
+    <string name="txt_error_voice_over">Error to load character information</string>
+    <string name="txt_back">Back</string>
+    <string name="txt_please_wait">Please wait</string>
+    <string name="txt_load_descrition">Loading Character information…</string>
+    <string name="txt_load_information_voice_over">Load information</string>
+    <string name="txt_type_number_hint">type number between 1 and 826</string>
 </resources>

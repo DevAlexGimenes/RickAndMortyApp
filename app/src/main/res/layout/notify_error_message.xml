@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:gravity="center_horizontal"
-            android:text="ERROR"
+            android:text="@string/txt_title_error"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -38,7 +38,7 @@
             android:layout_marginBottom="70dp"
             android:gravity="center_horizontal"
             android:maxLines="3"
-            android:text="Failed to load character information, please go back to the previous screen and try again..."
+            android:text="@string/txt_desc_error"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="16sp"
@@ -56,14 +56,15 @@
         app:layout_constraintBottom_toBottomOf="@+id/linear_layout"
         app:layout_constraintEnd_toEndOf="@+id/linear_layout"
         app:layout_constraintStart_toStartOf="@+id/linear_layout"
-        app:layout_constraintTop_toTopOf="@+id/linear_layout" />
+        app:layout_constraintTop_toTopOf="@+id/linear_layout"
+        android:contentDescription="@string/txt_error_voice_over" />
 
     <Button
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:backgroundTint="#E42315"
-        android:text="Back"
+        android:text="@string/txt_back"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="16sp"

@@ -29,10 +29,10 @@ class DetailsCharacterViewModel(
     fun getSingleCharacter(id: String) {
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                val moviesInformation = withContext(Dispatchers.Default) {
+                val characterInfo = withContext(Dispatchers.Default) {
                     rickAndMortyUseCase.getSingleCharacter(id)
                 }
-                singleCharacterLv.value = moviesInformation
+                singleCharacterLv.value = characterInfo
                 setStatusCharacterConfig()
             } catch (e: Exception) {
                 notifyErrorLv.postValue(Unit)
@@ -47,13 +47,19 @@ class DetailsCharacterViewModel(
     private fun setStatusCharacterConfig() {
         when (singleCharacterLv.value?.status) {
             "Alive" -> {
-                statusCharacterLv.postValue(StatusCharacter.STATUS_ALIVE)
+                statusCharacterLv.postValue(
+                    StatusCharacter.STATUS_ALIVE
+                )
             }
             "Dead" -> {
-                statusCharacterLv.postValue(StatusCharacter.STATUS_DEAD)
+                statusCharacterLv.postValue(
+                    StatusCharacter.STATUS_DEAD
+                )
             }
             else -> {
-                statusCharacterLv.postValue(StatusCharacter.STATUS_UNKNOWN)
+                statusCharacterLv.postValue(
+                    StatusCharacter.STATUS_UNKNOWN
+                )
             }
         }
     }

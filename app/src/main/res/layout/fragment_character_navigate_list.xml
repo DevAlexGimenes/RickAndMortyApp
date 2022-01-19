@@ -7,7 +7,6 @@
     android:background="#74BEDD"
     tools:context=".presentation.character.list.random.RandomCharacterListFragment">
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RvItemListRandom"
         android:layout_width="match_parent"
@@ -53,11 +52,10 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:animateLayoutChanges="true"
+                android:contentDescription="@string/back_button"
                 android:gravity="center"
                 android:src="@drawable/ic_arrow_back"
-                android:text="BTN1"
                 android:textColor="@color/black" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -71,13 +69,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="@drawable/shape_buttons"
                 android:backgroundTint="#14B2F6"
                 android:clickable="false"
                 android:fontFamily="@font/oldenburg"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 app:cornerRadius="20dp"
                 tools:text="01" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -92,12 +91,10 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:animateLayoutChanges="true"
+                android:contentDescription="@string/next_button"
                 android:gravity="center"
                 android:src="@drawable/ic_arrow_next"
-                android:text="BTN3"
                 android:textColor="@color/black" />
-
         </LinearLayout>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

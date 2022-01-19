@@ -25,30 +25,43 @@ class CharacterNavigateListViewModel(
     fun getListCharacter(page: Int) {
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                val moviesInformation = withContext(Dispatchers.Default) {
+                val characterInfo = withContext(Dispatchers.Default) {
                     rickAndMortyUseCase.getListCharacter(page.toString())
                 }
-                charactersInfoLv.value = moviesInformation
+                charactersInfoLv.value = characterInfo
                 setButtonsController(page)
             } catch (e: Exception) {
                 notifyErrorLv.postValue(Unit)
             }
-
         }
     }
 
     private fun setButtonsController(page: Int) {
         when {
             page < 2 -> {
-                setButtonsLv.postValue(Pair(first = false, second = true))
+                setButtonsLv.postValue(
+                    Pair(
+                        first = false,
+                        second = true
+                    )
+                )
             }
             page > 41 -> {
-                setButtonsLv.postValue(Pair(first = true, second = false))
+                setButtonsLv.postValue(
+                    Pair(
+                        first = true,
+                        second = false
+                    )
+                )
             }
             else -> {
-                setButtonsLv.postValue(Pair(first = true, second = true))
+                setButtonsLv.postValue(
+                    Pair(
+                        first = true,
+                        second = true
+                    )
+                )
             }
         }
     }
-
 }

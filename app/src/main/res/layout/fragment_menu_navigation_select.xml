@@ -23,10 +23,10 @@
         android:layout_height="wrap_content"
         android:baselineAligned="false"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/btnGifRandomCharacter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGifRandomCharacter">
 
         <LinearLayout
             android:id="@+id/llRandomCharacter"
@@ -39,8 +39,8 @@
                 android:id="@+id/imgRandomCharacter"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_margin="20dp"
                 android:layout_gravity="bottom"
+                android:layout_margin="20dp"
                 android:contentDescription="@string/navigation_bar_random_character"
                 android:src="@drawable/random_character_icon"
                 android:textColor="@color/black" />
@@ -49,15 +49,17 @@
                 android:id="@+id/btnRandomCharacter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="top"
                 android:layout_margin="15dp"
                 android:backgroundTint="#1476BC"
-                android:layout_gravity="top"
+                android:background="@drawable/shape_buttons"
                 android:fontFamily="@font/ruslan_display"
                 android:padding="15dp"
                 android:text="@string/txt_btn_navigate_random_character"
                 android:textAllCaps="false"
+                android:textColor="@color/white"
                 android:textSize="20sp"
-                app:cornerRadius="20dp" />
+                app:cornerRadius="200dp" />
 
         </LinearLayout>
 
@@ -72,8 +74,8 @@
                 android:id="@+id/imgTypeNumber"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_margin="20dp"
                 android:layout_gravity="bottom"
+                android:layout_margin="20dp"
                 android:contentDescription="@string/navigation_bar_random_character"
                 android:src="@drawable/type_number_icon"
                 android:textColor="@color/black" />
@@ -82,13 +84,15 @@
                 android:id="@+id/btnTypeNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="top"
                 android:layout_margin="15dp"
                 android:backgroundTint="#1476BC"
-                android:layout_gravity="top"
+                android:background="@drawable/shape_buttons"
                 android:fontFamily="@font/ruslan_display"
                 android:padding="15dp"
                 android:text="@string/txt_btn_navigate_type_number"
                 android:textAllCaps="false"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 app:cornerRadius="20dp" />
         </LinearLayout>
@@ -104,8 +108,8 @@
                 android:id="@+id/imgMenuListCharacters"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_margin="20dp"
                 android:layout_gravity="bottom"
+                android:layout_margin="20dp"
                 android:contentDescription="@string/navigation_bar_random_character"
                 android:src="@drawable/menu_list_icon"
                 android:textColor="@color/black" />
@@ -114,13 +118,15 @@
                 android:id="@+id/btnMenuListCharacters"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="top"
                 android:layout_margin="15dp"
                 android:backgroundTint="#1476BC"
-                android:layout_gravity="top"
+                android:background="@drawable/shape_buttons"
                 android:fontFamily="@font/ruslan_display"
                 android:padding="15dp"
                 android:text="@string/txt_btn_navigate_menu_list_of_the_character"
                 android:textAllCaps="false"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 app:cornerRadius="20dp" />
         </LinearLayout>

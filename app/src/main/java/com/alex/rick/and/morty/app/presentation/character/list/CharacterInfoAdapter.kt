@@ -10,35 +10,35 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.character_item_list.view.*
 
 class CharacterInfoAdapter(
-    private var movies: List<SingleCharacter>,
+    private var characters: List<SingleCharacter>,
     private val onItemClickListener: OnItemClickListener
-) : RecyclerView.Adapter<CharacterInfoAdapter.MovieViewHolder>() {
+) : RecyclerView.Adapter<CharacterInfoAdapter.CharacterViewHolder>() {
 
-    class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        fun bindMovie(character: SingleCharacter) {
+    class CharacterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        fun bindCharacter(character: SingleCharacter) {
             Glide.with(itemView).load(character.image).into(itemView.image_character)
             itemView.txtNameList.text = character.name
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
-        return MovieViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
+        return CharacterViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.character_item_list, parent, false)
         )
     }
 
-    override fun getItemCount(): Int = movies.size
+    override fun getItemCount(): Int = characters.size
 
-    override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        val character = movies[position]
-        holder.bindMovie(character)
+    override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
+        val character = characters[position]
+        holder.bindCharacter(character)
         holder.itemView.setOnClickListener {
             onItemClickListener.onItemClicked(character)
         }
     }
 
     fun updateList(newList: List<SingleCharacter>) {
-        movies = newList
+        characters = newList
         notifyDataSetChanged()
     }
 
