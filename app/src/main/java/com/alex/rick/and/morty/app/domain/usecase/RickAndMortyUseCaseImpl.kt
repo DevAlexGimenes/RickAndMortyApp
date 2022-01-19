@@ -5,12 +5,17 @@ import com.alex.rick.and.morty.app.domain.repository.RickAnMortyRepository
 
 class RickAndMortyUseCaseImpl(
     private val rickAnMortyRepository: RickAnMortyRepository
-): RickAndMortyUseCase {
-    override suspend fun getSingleCharacter(id: String) : SingleCharacter{
-        return rickAnMortyRepository.getSingleCharacter(id)
+) : RickAndMortyUseCase {
+
+    override suspend fun getSingleCharacter(id: String): SingleCharacter {
+        return rickAnMortyRepository.getSingleCharacter(
+            id = id
+        )
     }
 
     override suspend fun getListCharacter(page: String): List<SingleCharacter> {
-        return rickAnMortyRepository.getListCharacter(page)
+        return rickAnMortyRepository.getListCharacter(
+            page = page
+        )
     }
 }

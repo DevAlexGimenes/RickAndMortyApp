@@ -9,13 +9,13 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/firstTitle"
@@ -45,9 +45,11 @@
                 android:layout_width="190dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="15dp"
+                android:background="@drawable/shape_buttons"
                 android:backgroundTint="#14B2F6"
                 android:clickable="false"
                 android:fontFamily="@font/oldenburg"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 app:cornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -103,11 +105,13 @@
                 android:layout_marginStart="35dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="35dp"
+                android:background="@drawable/shape_buttons"
                 android:backgroundTint="#1476BC"
                 android:fontFamily="@font/ruslan_display"
                 android:padding="15dp"
                 android:text="@string/txt_continue"
                 android:textAllCaps="false"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 app:cornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"

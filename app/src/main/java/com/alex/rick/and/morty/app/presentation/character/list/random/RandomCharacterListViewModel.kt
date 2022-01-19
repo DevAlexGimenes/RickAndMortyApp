@@ -19,13 +19,13 @@ class RandomCharacterListViewModel(
     private val notifyErrorLv = MutableLiveData<Unit>()
     fun notifyError(): MutableLiveData<Unit> = notifyErrorLv
 
-    fun getListCharacter(id: String) {
+    fun getListCharacter(page: String) {
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                val moviesInformation = withContext(Dispatchers.Default) {
-                    rickAndMortyUseCase.getListCharacter(id)
+                val characterInfo = withContext(Dispatchers.Default) {
+                    rickAndMortyUseCase.getListCharacter(page)
                 }
-                charactersInfoLv.value = moviesInformation
+                charactersInfoLv.value = characterInfo
             } catch (e: Exception) {
                 notifyErrorLv.postValue(Unit)
             }
