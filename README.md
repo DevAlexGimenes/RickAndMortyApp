@@ -80,6 +80,10 @@ enum class StatusCharacter(
 }
 
 ```
+# The Nav Graph
+
+![my_nav_graph](https://user-images.githubusercontent.com/85715073/150380485-f13d23a3-3b04-4124-bbe1-6ab6b739734f.png)
+
 
 # The beta version app / A versão beta do app
 
@@ -118,8 +122,5 @@ https://user-images.githubusercontent.com/85715073/150379385-dade622f-c34e-4669-
 ### *List Exception*
 
 https://user-images.githubusercontent.com/85715073/150379443-52fb047e-b913-4070-b517-2f9ec3d2f222.mp4
-
-
-
 
 
